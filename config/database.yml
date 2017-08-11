@@ -12,4 +12,4 @@ test:
   timeout: 5000
 
 production:
-   url: <%= ENV['HEROKU_POSTGRESQL_TEAL_URL'] %>
+   url: <%= ENV['DATABASE_URL'] %>
