@@ -1,0 +1,16 @@
+<div class="col-md-6 col-md-offset-3" style="margin-top:8rem;margin-bottom:6rem;">
+  <div class="panel panel-default">
+    <div class="panel-heading" style="background:#691F98;outline:none;border:none;">
+      <h3 class="panel-title"style="color:white;letter-spacing:1px;text-transform:uppercase;font-size:16px;"><%= Spree.t(:editing_user) %></h3>
+    </div>
+    <div class="panel-body">
+      <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+      
+      <%= form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put do |f| %>
+        <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+        <p>
+          <%= f.submit Spree.t(:update), :class => '' :style=> 'background:#691F98;width:100%;color:white;border:none;height:46px;text-transform:uppercase;font-weight:600;border-radius:4px;font-size:16px;line-height:46px;padding:0 26px;letter-spacing:1px;'%>
+        </p>
+      <% end %>
+    </div>
+  </div>
